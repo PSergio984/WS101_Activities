@@ -1,0 +1,24 @@
+h1:hover{
+   color:red;
+   transition:all 1s ease-in;
+}
+button:hover{
+ transform: rotate(360deg);
+ transition:all 1s;
+
+}
+button{
+    background-color: red;
+    height:50vh;
+    
+}
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body{
+    height:100vh;
+}

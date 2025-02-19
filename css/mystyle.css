@@ -1,0 +1,97 @@
+:root{
+    --bodyColor:olive;
+}
+
+body{
+    background-color:var(--bodyColor);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    color:navy;
+    margin-left:20px;
+}
+
+h1:hover{
+    transform: rotate(360deg);
+    color:red;
+    transition: all 0.75s ease-in-out;
+}
+
+button{
+    border-radius: 5;
+    font-size:15px;
+    height:5vh;
+    width:10vh;
+    background-color: aqua;
+    margin-bottom:5vh;
+}
+button:hover{
+    background-color:violet;
+    transition: all 0.75s ease-in-out;
+    box-shadow: 10px 10px 3px 3px black;
+    transform: translateY(-15px);
+}
+
+
+#body{
+    height:25rem;
+    width:12.5rem;
+    background-color: brown;
+    border-radius: 10rem 10rem 0 0;
+}
+
+#ball-container{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+.ball{
+    border-radius:50%;
+    height:15rem;
+    width:15rem;
+    background-color: brown;
+}
+
+
+.hover{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+h1.one1{
+    font-family:"Courier New",Courier,monospace;
+    font-size:12pt;
+    color:red;
+    text-align:center;
+    font-style:italic;
+
+}
+
+
+h1.two2{
+    font-family:Verdana,Geneva,Arial, Helvetica, sans-serif;
+    font-size:16pt;
+    color:green;
+    text-align:center;
+}
+
+
+h1.three3{
+    background-color: Navy;
+    font-family:"Brush Script MT";
+    font-size:16pt;
+    color:fuchsia;
+    text-align:center;
+
+}
+
