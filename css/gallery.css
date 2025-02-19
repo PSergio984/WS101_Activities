@@ -1,0 +1,100 @@
+
+body,html{
+    padding:0;
+    margin:0;
+}
+body{
+    background-image: url('../img/pokebg.jpg');
+}
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.5rem;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    background-color: #393f4d;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.logo img {
+    height: 5rem;
+}
+
+.menu ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu ul,
+.menu li {
+    font-size: 2px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    font-size: 1.25rem;
+    list-style-type: none;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.big {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 0.90fr));
+    grid-template-rows: repeat(4, minmax(100px, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #393f4d;
+    padding: 0.5em;
+}
+
+footer p {
+    font-size: 0.9rem;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+}
