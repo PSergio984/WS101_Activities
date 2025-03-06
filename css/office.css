@@ -1,0 +1,118 @@
+:root{
+    --mainColor:maroon;
+    --mainFntClr:cyan;
+    --ulBg:rgb(238, 20, 191);
+}
+body,html{
+    margin:0;
+    padding:0;
+    height:100vh;
+}
+body{
+    display:grid;
+    grid-template-columns: 15vw auto;
+    grid-template-areas: 'aside main' ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    /* animation: goUP 3s infinite alternate linear; */
+    color:var(--mainFntClr);
+    background-color: var(--mainColor);
+    padding:1em;
+    border: 0.1em double cyan;
+    margin:1.5em;
+    width: clamp(200px,18vw,50vw);
+    gap:1.5rem;
+    
+    overflow-y: auto;
+}
+article{
+    grid-area: main;
+}
+ul div{
+   background-color: var(--ulBg);
+   padding:0.5em;
+   border:0.30em double var(--mainFntClr);
+   margin:1em;
+   transition: transform 0.2s ease-in;
+}
+
+aside{
+    grid-area:aside;
+    font-family: 'Segoe UI';
+    font-weight:bold;
+    position:fixed;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    width:15vw;
+    justify-content: flex-start;
+    align-items: center;
+    height:100vh;
+}
+
+aside div{
+    display:flex;
+    background-color: brown;
+    margin:0.30em;
+    width:10vw;
+    font-size: 1rem;
+    color:red;
+    height:auto;
+    padding:0.1em;
+    padding-left: 1em;
+    transition:transform 0.2s ease-in;
+
+}
+
+aside div:hover{
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 0.5px 1px 2px 2px white;
+}
+
+main div:hover{
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 0.5px 1px 2px 2px white;
+}
+
+header{
+    width:100%;
+    margin-bottom:50px;
+}
+aside h1{
+    background-color: darkblue;
+    color:pink;
+    width:100%;
+    font-size:1rem;
+    text-align:center;
+    padding:1em 0 1em 0;
+}
+
+
+
+a:visited{
+    color:green;
+}
+
+a:hover{
+    color:blue;
+}
+
+a:active{
+    color:red;
+}
+
+a{
+    color:lightblue;
+    text-decoration: none;
+}
+
+@keyframes goUP{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-650%);
+    }
+}

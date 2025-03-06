@@ -18,16 +18,16 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
-    margin-bottom:50px;
+    padding:1em 2em;
+    margin-bottom:2em;
 }
 
 nav a
 {
-    margin-right:20px;
+    margin:1em;
 }
 .top > img{
-    width: 75px;
+    width:clamp(60px,4vw,5vw);
     height:auto;
     
 }
@@ -41,41 +41,42 @@ a{
     justify-content: center;
     flex-direction:row;
     flex-wrap:wrap;
-    margin:25px 25px 50px 25px;
+    margin:1em 1em 2em 1em;
 }
 .banner h1
 {
    font-size:48px;
    color:#f9faf8;
    font-weight: 900;
-   margin-bottom:5px;
+   margin-bottom:0.5em;
 }
 
 .banner p{
     font-size:18px;
     color:#e5e7eb;
-    margin-bottom:20px;
+   
 }
 .banner button{
     background-color: #3882f6;
     color:#f9faf8;
-    padding:10px 20px;
+    padding:0.75em 1.25em;
     border:none;
-    border-radius:10px;
-    font-size:16px;
+    border-radius:0.75em;
+    font-size:1rem;
     cursor:pointer;
 }
 .banner > img{
-    width:350px;
+    width:20vw;
     height: auto;
-    margin:25px;
+    border-radius:0.5rem;
+    margin:1.5rem;
 }
 .content-header{
     display:flex;
     justify-content:center;
-    font-size:36px;
+    font-size:2.5rem;
     font-weight: 900;
-    margin-bottom:5px;
+    margin-bottom:0.25em;
 
 }
 .content{
@@ -83,20 +84,25 @@ a{
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    padding:12px;
-    gap:12px;
-    margin-bottom:50px;
+    padding:0.90em;
+    gap:0.9em;
+    margin-bottom:3.1em;
    
 }
 .card{
-    margin-top:10px;
-    width:300px;
-    border:2px solid #3882f6;
+    margin-top:0.75em;
+    width:clamp(200px,15vw,20vw);
+    border:0.20rem solid #3882f6;
+    transition: all 0.25s ease-in-out;
     border-radius:4px;
     padding:16px;
 }
 .card a{
-    color:#1f2937;
+    color:#1f2937;  
+}
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -6px;
 }
 
 .quote{
@@ -105,12 +111,12 @@ a{
     flex-direction:column;
     justify-content: center;
     align-items:center;
-    padding: 20px;
+    padding: 1.5em;
     text-align:center;
     flex-wrap:wrap;
 }
 .quote h1{
-    font-size:36px;
+    font-size:2em;
     color:#1f2937;
     font-weight: 900;
     font-style: italic;
@@ -119,20 +125,26 @@ a{
     text-align:center;
 }
 .quote p{
-    font-size:24px;
+    font-size:1.5em;
     color:#1f2937;
     font-weight: 900;
     text-align:right;
 }
 
+article{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+}
 .sign-up{
     background-color: #3882F6;
-    margin: 50px 200px;
-    padding: 10px 80px;
+    width:35%;
+    padding: 0.5em 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 0.5em;
     color: #f9faf8;
     flex-wrap:wrap;
 }
@@ -140,33 +152,33 @@ a{
 .sign-up-form input,.sign-up-form textarea{
     font-family: 'Roboto','Ubuntu', sans-serif;
     background-color: #f9faf8;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
+    margin: 0.6em;
+    padding: 0.6em;
+    border-radius: 0.25em;
     border: none;
     width: 100%;
     vertical-align:bottom;
-    height:20px;
+    height:2.25em;
     display:flex;
     flex:1;
     flex-wrap:wrap;
 }
 
 .sign-up-form h3{
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500px;
-    margin-bottom: 15px;
+    margin-bottom: 1em;
     text-align:center;
 }
 
 .sign-up-form button{
     color: #fff;
     border-color: #fff;
-    border-radius: 8px;
+    border-radius: 0.5em;
     background-color: #3882F6;
-    padding: 5px 25px;
-    font-size: 15px;
-    margin:15px;
+    padding: 0.25em 1.5em;
+    font-size: 1rem;
+    margin:1rem;
     display:flex;
     justify-self: flex-end;
 }
@@ -177,6 +189,6 @@ a{
     justify-content:center;
     align-items:center;
     color:#f9faf8;
-    font-size:20px;
+    font-size:1.25rem;
     font-weight: 900;
 }
