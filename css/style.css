@@ -15,7 +15,7 @@ body{
 }
 .header .top{
     color:#f9faf8;
-    display:flex;
+    display:sticky;
     justify-content:space-between;
     align-items:center;
     padding:1em 2em;
@@ -29,8 +29,8 @@ nav a
 .top > img{
     width:clamp(60px,4vw,5vw);
     height:auto;
-    
 }
+
 a{
     color:#f9faf8;
     text-decoration: none;

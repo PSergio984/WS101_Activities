@@ -1,0 +1,65 @@
+/* 🔹 Fullscreen Loading Screen (Covers Everything) */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bgcolor); /* Dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    z-index: 10000; /* Highest layer */
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* 🔹 "Manabat" (Upper-left Corner) */
+.loading-screen header {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #bbb; /* Lighter gray */
+}
+
+/* 🔹 Article (Middle-left Side) */
+.loading-screen article {
+    font-size: 18px;
+    max-width: 600px;
+    color: #999; /* Starts gray */
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    line-height: 1.5;
+}
+
+/* 🔹 Percentage (Bottom-right Corner) */
+#loading-text {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 8rem;
+    color: white; /* Always white */
+}
+
+/* 🔹 Hide scrollbar when loading screen is active */
+body.loading {
+    overflow: hidden;
+}
+
+
+/* 🔹 Fade-out and slide-up effect */
+.loading-screen.fade-out {
+    transform: translateY(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    pointer-events: none;
+}
+
+
