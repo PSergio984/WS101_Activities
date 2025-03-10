@@ -20,7 +20,7 @@ main{
     color:var(--mainFntClr);
     background-color: var(--mainColor);
     padding:1em;
-    border: 0.1em double cyan;
+    border: 0.40em double cyan;
     margin:1.5em;
     width: clamp(200px,18vw,50vw);
     gap:1.5rem;
