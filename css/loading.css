@@ -101,17 +101,21 @@
     color: #999; 
     position: absolute;
     top: 75%;
-    left: 35%;
+    left: 35vw;
     transform: translateY(-50%);
     line-height: 1.5;
 }
-
+@media screen and (max-width: 767px){
+  .loading-screen article{
+    left:5vw;
+  }
+}
 
 #loading-text {
     position: absolute;
     bottom: 30px;
     right: 50px;
-    font-size: 8rem;
+    font-size: clamp(1rem, 7vw, 10rem);
     color: white; 
 }
 
@@ -127,5 +131,4 @@ body.loading {
     transition: opacity 1s ease-out, transform 1s ease-out;
     pointer-events: none;
 }
-
 
