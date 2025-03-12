@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
 :root{
     --bgcolor:#001524;
     --fontcolor:#FFFFFF;
@@ -18,28 +20,11 @@
 
 
 
-.header{
-    background-color: #1f2937;
-}
-.header .top{
-    color:#f9faf8;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1em 2em;
-    margin-bottom:2em;
-}
-nav a
-{
-    margin:1em;
-}
-.top > img{
-    width:clamp(60px,4vw,5vw);
-    height:auto;
-}
 .content-header{
     display: flex;
     justify-content: center;
+    margin-top: 0.5em;
+    font-size: clamp( 1rem,2rem,2vw);
 }
 .main-content {
     display: flex;
@@ -52,33 +37,6 @@ a{
     color:#f9faf8;
     text-decoration: none;
 }
-.banner{
-    display:flex;
-    justify-content: center;
-    flex-direction:row;
-    flex-wrap:wrap;
-    margin:1em 1em 2em 1em;
-}
-.banner h1
-{
-   font-size:48px;
-   color:#f9faf8;
-   font-weight: 900;
-   margin-bottom:0.5em;
-}
-
-.banner p{
-    font-size:18px;
-    color:#e5e7eb;
-   
-}
-
-.banner > img{
-    width:20vw;
-    height: auto;
-    border-radius:0.5rem;
-    margin:1.5rem;
-}
 
 a {
     color: var(--fontcolor);
@@ -87,6 +45,164 @@ a {
 }
 
 
+
+.banner{
+    background-color: #001524;
+    background-image:
+    repeating-linear-gradient(
+        to right, transparent 0 100px,
+        #afabab 100px 101px
+    ),
+    repeating-linear-gradient(
+        to bottom, transparent 0 100px,
+        #afabab 100px 101px
+    );
+}
+
+.banner::before{
+    position: absolute;
+    width: min(1400px, 90vw);
+    left: 50%;
+    height: 100vh;
+    transform: translateX(-50%);
+    content: '';
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 100px;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 20%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1200px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1200px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1200px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+.banner .content .author{
+    font-family: poppins;
+    text-align: right;
+    max-width: 200px;
+    color:#ffffff;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(/img/ash.png); 
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #ffffff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 4em;
+    }
+}
 
 
 .card {
