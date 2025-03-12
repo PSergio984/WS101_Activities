@@ -265,9 +265,7 @@ a {
   font-weight: 700;
 }
 
-.card:hover img {
-  scale: 0;
-}
+
 
 .card__description {
   margin: 10px 0 0;
@@ -394,6 +392,9 @@ a {
     z-index: 4; /* Ensure it stays above other elements */
 }
 
+.mail-link {
+  display: inline-block; /* Ensures it behaves like a button */
+}
 .card .mail svg {
     stroke: var(--primary);
     stroke-width: 3px;
@@ -428,12 +429,12 @@ a {
 
 .card .bottom {
     position: absolute;
-    bottom: 3px;
-    left: 3px;
-    right: 3px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     background: var(--primary);
     top: 80%;
-    border-radius: 29px;
+    border-radius: 20px;
     z-index: 2;
     box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
     overflow: hidden;
@@ -555,4 +556,13 @@ a {
         height: auto;
         aspect-ratio: 1;
     }
+}
+
+.copyright {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #111827;
+  width: 100%;
+  background-color:var(--primary);
 }
