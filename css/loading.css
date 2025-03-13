@@ -1,0 +1,130 @@
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background:#001524; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    z-index: 10000; 
+    padding: 50px;
+    overflow: hidden;
+}
+
+.svg-frame {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+  .svg-frame svg {
+    position: absolute;
+    transition: .5s;
+    z-index: calc(1 - (0.2 * var(--j)));
+    transform-origin: center;
+    width: 344px;
+    height: 344px;
+    fill: none;
+  }
+  
+  .svg-frame:hover svg {
+    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i))) translateY(calc(-35px * var(--i)));
+  }
+  
+  .svg-frame svg #center {
+    transition: .5s;
+    transform-origin: center;
+  }
+  
+  .svg-frame:hover svg #center {
+    transform: rotate(-30deg) translateX(45px) translateY(-3px);
+  }
+  
+  #out2 {
+    animation: rotate16 7s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  #out3 {
+    animation: rotate16 3s ease-in-out infinite alternate;
+    transform-origin: center;
+    stroke: #ff0;
+  }
+  
+  #inner3,
+  #inner1 {
+    animation: rotate16 4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  #center1 {
+    fill: #ff0;
+    animation: rotate16 2s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  
+  @keyframes rotate16 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+.loading-screen header {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #bbb; 
+}
+
+
+.loading-screen article {
+    font-size: 1rem;
+    max-width: 600px;
+    color: #999; 
+    position: absolute;
+    top: 75%;
+    left: 35vw;
+    transform: translateY(-50%);
+    line-height: 1.5;
+}
+@media screen and (max-width: 767px){
+  .loading-screen article{
+    left:5vw;
+  }
+}
+
+#loading-text {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: clamp(1rem, 7vw, 10rem);
+    color: white; 
+}
+
+
+
+
+.loading-screen.fade-out {
+    transform: translateY(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    pointer-events: none;
+}
+
