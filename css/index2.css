@@ -149,7 +149,7 @@ a {
   font-size: 3em;
 }
 .banner .content .model {
-  background-image: url('img/ash.png'); 
+  background-image: url('../img/ash.png'); 
   width: 100%;
   height: 75vh;
   position: absolute;
