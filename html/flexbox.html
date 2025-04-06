@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/flexbox.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card2">
+        <h1>Create a Flex Container</h1>
+
+        <div class="flex-container">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+
+        <p>
+          A Flexible Layout must have a parent element with the
+          <em>display</em> property set to <em>flex</em>.
+        </p>
+
+        <p>
+          Direct child elements(s) of the flexible container automatically
+          becomes flexible items.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-direction Property</h1>
+
+        <p>
+          flex-direction: column; stacks the flex items vertically (from top to
+          bottom):
+        </p>
+
+        <div class="flex-container2">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-direction Property</h1>
+
+        <p>
+          flex-direction: row-reverse; stacks the flex items horizontally (but
+          from right to left):
+        </p>
+
+        <div class="flex-container3">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-direction Property</h1>
+
+        <p>
+          flex-direction: column-reverse; stacks the flex items vertically (but
+          from bottom to top):
+        </p>
+
+        <div class="flex-container4">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-wrap Property</h1>
+
+        <p>
+          flex-wrap: nowrap; specifies that the flex items will not wrap (this
+          is default):
+        </p>
+
+        <div class="flex-container5">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+
+        <p>Try resizing the browser window!</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-flow Property</h1>
+
+        <p>
+          The flex-flow property is a shorthand property for the flex-direction
+          and the flex-wrap properties.
+        </p>
+
+        <div class="flex-container6">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+
+        <p>Try resizing the browser window.</p>
+      </div>
+    </div>
+
+    <!-- flex-start -->
+    <div class="card">
+      <div class="card2">
+        <h1>The justify-content Property Examples</h1>
+        <h3>justify-content: flex-start</h3>
+        <div class="flex-container" style="justify-content: flex-start">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- flex-end -->
+    <div class="card">
+      <div class="card2">
+        <h3>justify-content: flex-end</h3>
+        <div class="flex-container" style="justify-content: flex-end">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- center -->
+    <div class="card">
+      <div class="card2">
+        <h3>justify-content: center</h3>
+        <div class="flex-container" style="justify-content: center">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- space-between -->
+    <div class="card">
+      <div class="card2">
+        <h3>justify-content: space-between</h3>
+        <div class="flex-container" style="justify-content: space-between">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- space-around -->
+    <div class="card">
+      <div class="card2">
+        <h3>justify-content: space-around</h3>
+        <div class="flex-container" style="justify-content: space-around">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- space-evenly -->
+    <div class="card">
+      <div class="card2">
+        <h3>justify-content: space-evenly</h3>
+        <div class="flex-container" style="justify-content: space-evenly">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- align-items: flex-start -->
+    <div class="card">
+      <div class="card2">
+        <h1>The align-items Property Examples</h1>
+        <h3>align-items: flex-start</h3>
+        <div class="align-container" style="align-items: flex-start">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- align-items: flex-end -->
+    <div class="card">
+      <div class="card2">
+        <h3>align-items: flex-end</h3>
+        <div class="align-container" style="align-items: flex-end">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- align-items: center -->
+    <div class="card">
+      <div class="card2">
+        <h3>align-items: center</h3>
+        <div class="align-container" style="align-items: center">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- align-items: stretch -->
+    <div class="card">
+      <div class="card2">
+        <h3>align-items: stretch</h3>
+        <div class="align-container" style="align-items: stretch">
+          <div style="height: auto">1</div>
+          <div style="height: auto">2</div>
+          <div style="height: auto">3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- align-items: baseline -->
+    <div class="card">
+      <div class="card2">
+        <h3>align-items: baseline</h3>
+        <div class="align-container" style="align-items: baseline">
+          <div style="font-size: 40px">1</div>
+          <div style="font-size: 20px">2</div>
+          <div style="font-size: 30px">3</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The order Property</h1>
+
+        <p>Use the order property to sort the flex items as you like:</p>
+        <div class="flex-container9">
+          <div style="order: 3">1</div>
+          <div style="order: 2">2</div>
+          <div style="order: 4">3</div>
+          <div style="order: 1">4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-grow Property</h1>
+
+        <p>
+          Make the third flex item grow eight times faster than the other flex
+          items:
+        </p>
+
+        <div class="flex-container11">
+          <div style="flex-grow: 1">1</div>
+          <div style="flex-grow: 1">2</div>
+          <div style="flex-grow: 8">3</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-shrink Property</h1>
+
+        <p>
+          Do not let the third flex item shrink as much as the other flex items:
+        </p>
+
+        <div class="flex-container12">
+          <div>1</div>
+          <div>2</div>
+          <div style="flex-shrink: 0">3</div>
+          <div>4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The flex-basis Property</h1>
+        <div class="flex-container14">
+          <div>1</div>
+          <div>2</div>
+          <div style="flex-basis: 200px">3</div>
+          <div>4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>The align-self Property</h1>
+
+        <p>
+          The "align-self: flex-start;" aligns the selected flex item at the top
+          of the container.
+        </p>
+        <p>
+          The "align-self: flex-end;" aligns the selected flex item at the
+          bottom of the container.
+        </p>
+
+        <div class="flex-container16">
+          <div>1</div>
+          <div style="align-self: flex-start">2</div>
+          <div style="align-self: flex-end">3</div>
+          <div>4</div>
+        </div>
+
+        <p>
+          The align-self property overrides the align-items property of the
+          container.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <h1>Responsive Flexbox</h1>
+
+        <p>
+          In this example, we change the percentage of flex to create different
+          layouts for different screen sizes.
+        </p>
+        <p>
+          <b
+            >Resize the browser window to see that the direction changes when
+            the screen size is 800px wide or smaller.</b
+          >
+        </p>
+
+        <div class="flex-container17">
+          <div class="flex-item-left">1</div>
+          <div class="flex-item-right">2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <div class="header-1">
+          <h1>Responsive Image Gallery</h1>
+          <p>Resize the browser window to see the responsive effect.</p>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <img src="../img/poke1.jpg" style="width: 100%" />
+            <img src="../img/poke2.jpg" style="width: 100%" />
+            <img src="../img/poke3.jpg" style="width: 100%" />
+            <img src="../img/poke4.jpg" style="width: 100%" />
+            <img src="../img/poke5.jpg" style="width: 100%" />
+            <img src="../img/poke6.jpg" style="width: 100%" />
+            <img src="../img/poke7.jpg" style="width: 100%" />
+          </div>
+
+          <div class="column">
+            <img src="../img/poke8.jpg" style="width: 100%" />
+            <img src="../img/poke9.jpg" style="width: 100%" />
+            <img src="../img/poke10.jpg" style="width: 100%" />
+            <img src="../img/poke11.jpg" style="width: 100%" />
+            <img src="../img/poke12.jpg" style="width: 100%" />
+            <img src="../img/poke13.jpg" style="width: 100%" />
+          </div>
+
+          <div class="column">
+            <img src="../img/poke14.jpg" style="width: 100%" />
+            <img src="../img/poke15.jpg" style="width: 100%" />
+            <img src="../img/poke16.jpg" style="width: 100%" />
+            <img src="../img/pokeball.png" style="width: 100%" />
+            <img src="../img/pokebg.jpg" style="width: 100%" />
+            <img src="../img/ash.png" style="width: 100%" />
+            <img src="../img/amiggas.png" style="width: 100%" />
+          </div>
+
+          <div class="column">
+            <img src="../img/barberry.png" style="width: 100%" />
+            <img src="../img/black.png" style="width: 100%" />
+            <img src="../img/border.png" style="width: 100%" />
+            <img src="../img/gamePixelBg.avif" style="width: 100%" />
+            <img src="../img/hackerrank.svg" style="width: 100%" />
+            <img src="../img/discord.svg" style="width: 100%" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card2">
+        <!-- Note -->
+        <div
+          style="background: yellow; padding: 5px; width: 100%; color: black"
+        >
+          <h4 style="text-align: center">
+            Resize the browser window to see the responsive effect.
+          </h4>
+        </div>
+
+        <!-- Header -->
+        <div class="header-2">
+          <h1>My Website</h1>
+          <p>With a <b>flexible</b> layout.</p>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="navbar">
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+          <a href="#">Link</a>
+        </div>
+
+        <!-- The flexible grid (content) -->
+        <div class="row">
+          <div class="side">
+            <h2>About Me</h2>
+            <h5>Photo of me:</h5>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>
+              Some text about me in culpa qui officia deserunt mollit anim..
+            </p>
+            <h3>More Text</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg" style="height: 60px">Image</div>
+            <br />
+            <div class="fakeimg" style="height: 60px">Image</div>
+            <br />
+            <div class="fakeimg" style="height: 60px">Image</div>
+          </div>
+          <div class="main">
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Dec 7, 2024</h5>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>Some text..</p>
+            <p>
+              Sunt in culpa qui officia deserunt mollit anim id est laborum
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco.
+            </p>
+            <br />
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Sep 2, 2024</h5>
+            <div class="fakeimg" style="height: 200px">Image</div>
+            <p>Some text..</p>
+            <p>
+              Sunt in culpa qui officia deserunt mollit anim id est laborum
+              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+              labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <h2>Footer</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
