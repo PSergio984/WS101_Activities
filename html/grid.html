@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/grid.css">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <h1>CSS Grid</h1>
+</header>
+<main>
+  <!-- Left Column: Description -->
+  <div class="description">
+    <h2>Grid Layout</h2>
+    <p>
+      A Grid Layout must have a parent element with the <em>display</em> property set to <em>grid</em> or <em>inline-grid</em>.
+    </p>
+    <p>
+      Direct child element(s) of the grid container automatically becomes grid items.
+    </p>
+  </div>
+  <!-- Right Column: Output inside a card -->
+  <div>
+    <div class="card">
+      <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <h1>The column-gap Property</h1>
+
+<p>Use the <em>column-gap</em> 
+    property to adjust the space between the columns:</p>
+
+  </div>
+
+  <div>
+    <div class="card">
+        <div class="container2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>
+        </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <h1>The row-gap Property</h1>
+
+<p>Use the <em>row-gap</em> property to adjust the space between the rows:</p>
+  </div>
+
+  <div>
+    <div class="card">
+        <div class="container3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>
+          </div>
+          
+    </div>
+  </div>
+  <div class="description">
+    <h1>The gap Property</h1>
+
+<p>Use the <em>gap</em> shorthand property to adjust the space between the columns and rows.</p>
+  </div>
+
+  <div>
+    <div class="card">
+        <div class="container4">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>
+          </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <h1>The grid-column Property</h1>
+
+<p>The <em>grid-column</em> property is a shorthand property for the <em>grid-column-start</em> and the 
+<em>grid-column-end</em> properties.</p>
+
+<p>Place the first grid item at column-line 1, and let it span 2 columns:</p>
+  </div>
+  <div>
+    <div class="card">
+        <div class="grid-container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>  
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>  
+          </div>
+    </div>
+  </div>
+
+  <div class="description">
+    <h1>The grid-row Property</h1>
+
+<p>The <em>grid-row</em> property is a shorthand property for the <em>grid-row-start</em> and the 
+<em>grid-row-end</em> properties.</p>
+
+<p>Place the first grid item at row-line 1, and let it span 2 rows:</p>
+  </div>
+  <div>
+    <div class="card">
+        <div class="grid-container2">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>  
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item7">7</div>
+        <div class="item8">8</div>  
+      </div>
+    </div>
+  </div>
+
+  <div class="description">
+    
+<h1>The grid-template-columns Property</h1>
+
+<p>You can use the <em>grid-template-columns</em> property to specify the number of columns in your grid layout.</p>
+  </div>
+  <div>
+    <div class="card">
+        <div class="grid-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>
+          </div>   
+    </div>
+  </div>
+
+
+  <div class="description"><h1>The grid-template-columns Property</h1>
+
+    <p>Use the <em>grid-template-columns</em> property to specify the size of each column.</p></div>
+  <div>
+    <div class="card">
+
+        <div class="grid-container3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>
+          </div>
+    </div>
+  </div>
+
+
+  <div class="description">
+    <h1>The grid-template-rows Property</h1>
+
+<p>Use the <em>grid-template-rows</em> property to specify the size (height) of each row.</p>
+
+<p>Notice that the first row in this grid is 80px high and the second row is 200px high. The next rows will use auto as default:</p>
+
+  </div>
+  <div>
+    <div class="card">
+        <div class="grid-container4">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>  
+          </div>
+          
+    </div>
+  </div>
+  <div class="description justify"><h1>justify-content Properties</h1></div>
+<!-- justify-content: space-evenly -->
+<div class="card">
+    <h3>justify-content: space-evenly</h3>
+    <p class="description">
+      Grid items are evenly distributed within the container, with equal space around them.
+    </p>
+    <div class="container-grid" style="justify-content: space-evenly;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+  </div>
+
+  <!-- justify-content: space-around -->
+  <div class="card">
+    <h3>justify-content: space-around</h3>
+    <p class="description">
+      Grid items have equal space around them, with the space at the edges being half the space between items.
+    </p>
+    <div class="container-grid" style="justify-content: space-around;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+  </div>
+
+  <!-- justify-content: space-between -->
+  <div class="card">
+    <h3>justify-content: space-between</h3>
+    <p class="description">
+      Grid items are evenly distributed with the first item at the start and the last at the end.
+    </p>
+    <div class="container-grid" style="justify-content: space-between;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+  </div>
+
+  <!-- justify-content: center -->
+  <div class="card">
+    <h3>justify-content: center</h3>
+    <p class="description">
+      Grid items are centered within the container.
+    </p>
+    <div class="container-grid" style="justify-content: center;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+  </div>
+
+  <!-- justify-content: start -->
+  <div class="card">
+    <h3>justify-content: start</h3>
+    <p class="description">
+      Grid items are packed toward the start of the container (left for left-to-right languages).
+    </p>
+    <div class="container-grid" style="justify-content: start;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+  </div>
+
+  <!-- justify-content: end -->
+  <div class="card">
+    <h3>justify-content: end</h3>
+    <p class="description">
+      Grid items are packed toward the end of the container (right for left-to-right languages).
+    </p>
+    <div class="container-grid" style="justify-content: end;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+  </div>
+  <div class="description justify"><h1>Align-content Properties</h1></div>
+   <!-- align-content: space-evenly -->
+   <div class="card">
+    <h3>align-content: space-evenly</h3>
+    <p class="description">
+      Grid tracks are evenly distributed in the container with equal space around them.
+    </p>
+    <div class="container-grid" style="align-content: space-evenly;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+  
+  <!-- align-content: space-around -->
+  <div class="card">
+    <h3>align-content: space-around</h3>
+    <p class="description">
+      Grid tracks have equal space around them, with the outer space being half of the space between tracks.
+    </p>
+    <div class="container-grid" style="align-content: space-around;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+  
+  <!-- align-content: space-between -->
+  <div class="card">
+    <h3>align-content: space-between</h3>
+    <p class="description">
+      The first grid track is placed at the start, the last at the end, and the remaining tracks are evenly distributed.
+    </p>
+    <div class="container-grid" style="align-content: space-between;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+  
+  <!-- align-content: center -->
+  <div class="card">
+    <h3>align-content: center</h3>
+    <p class="description">
+      All grid tracks are centered within the container.
+    </p>
+    <div class="container-grid" style="align-content: center;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+  
+  <!-- align-content: start -->
+  <div class="card">
+    <h3>align-content: start</h3>
+    <p class="description">
+      Grid tracks are packed toward the start of the container.
+    </p>
+    <div class="container-grid" style="align-content: start;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+  
+  <!-- align-content: end -->
+  <div class="card">
+    <h3>align-content: end</h3>
+    <p class="description">
+      Grid tracks are packed toward the end of the container.
+    </p>
+    <div class="container-grid" style="align-content: end;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </div>
+
+  <div class="description">
+    <h1>The grid-area Property</h1>
+
+<p>You can use the <em>grid-area</em> property to specify where to place an item.</p>
+
+<p>Make "item4" start on row 1 and column 2, and end on row 3 and column 2:</p>
+  </div>
+  <div>
+    <div class="card">
+        <div class="grid-container7">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>  
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+            <div class="item6">6</div>
+            <div class="item7">7</div>
+            <div class="item8">8</div>  
+        </div>
+    </div>
+  </div>
+  <div class="description"><h1>The grid-area Property</h1>
+
+    <p>You can use the <em>grid-area</em> property to name grid items.</p>
+    
+    <p>This grid layout contains six columns and three rows:</p></div>
+ 
+    <div>
+    <div class="card">
+        <div class="grid-container8">
+            <div class="item1">Header</div>
+            <div class="item2">Menu</div>
+            <div class="item3">Main</div>  
+            <div class="item4">Right</div>
+            <div class="item5">Footer</div>
+          </div>
+          
+    </div>
+  </div>
+  <div class="description"><h2>The justify-self property</h2>
+
+    <p>The justify-self property is used to align the content of a grid item along the row axis.</p></div>
+  <div>
+    <div class="card">
+        <div class="grid-container9">
+            <div class="item1">Item 1</div>
+            <div class="item2">Item 2</div>
+            <div class="item3">Item 3</div>  
+            <div class="item4">Item 4</div>
+            <div class="item5">Item 5</div>
+            <div class="item6">Item 6</div>
+          </div>
+    </div>
+  </div>
+  <div class="description">
+    
+<h2>The align-self property</h2>
+
+<p>The align-self property is used to align the content of a grid item along the column axis.</p>
+  </div>
+  <div>
+    <div class="card">
+        <div class="grid-container10">
+            <div class="item1">Item 1</div>
+            <div class="item2">Item 2</div>
+            <div class="item3">Item 3</div>  
+            <div class="item4">Item 4</div>
+            <div class="item5">Item 5</div>
+            <div class="item6">Item 6</div>
+          </div>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <p>&copy; Manabat CSS Grid Example</p>
+</footer>
+
+
+</body>
+</html>
