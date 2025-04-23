@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/checkout.css" />
+    <title>Checkout - Dragon's Lair Emporium</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="/api/placeholder/50/50" alt="Dragon's Lair Emporium Logo" />
+          <h1>Dragon's Lair Emporium</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="shop.html">Home</a></li>
+          <li><a href="product.html">Shop</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#about" class="active">Contact</a></li>
+        </ul>
+        <div class="cart-icon">
+          <span>🛒</span>
+          <span class="cart-count">3</span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <h1 class="page-title">Checkout</h1>
+      <ul class="breadcrumb">
+        <li><a href="product.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li>Checkout</li>
+      </ul>
+    </section>
+
+    <!-- Checkout Process -->
+    <div class="checkout-container">
+      <div class="checkout-left">
+        <!-- Checkout Steps -->
+        <div class="checkout-steps">
+          <div class="step active">
+            <div class="step-number">1</div>
+            <div class="step-label">Shopping Cart</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-label">Shipping</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-label">Payment</div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-label">Confirmation</div>
+          </div>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="cart-items" id="cart-section">
+          <h2 class="cart-title">Your Cart (3 items)</h2>
+
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="../img/dragon1.jpg" alt="Ember Guardian Dragon" />
+            </div>
+            <div class="item-details">
+              <h3 class="item-name">Ember Guardian Dragon</h3>
+              <div class="item-price">$89.99</div>
+              <div class="item-actions">
+                <div class="item-quantity">
+                  <button class="quantity-btn">-</button>
+                  <input
+                    type="text"
+                    class="quantity-input"
+                    value="1"
+                    readonly
+                  />
+                  <button class="quantity-btn">+</button>
+                </div>
+                <div class="remove-item">Remove</div>
+              </div>
+            </div>
+            <div class="item-total">$89.99</div>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="../img/diamond-dragon.jpg" alt="Sapphire Sea Dragon" />
+            </div>
+            <div class="item-details">
+              <h3 class="item-name">Sapphire Sea Dragon</h3>
+              <div class="item-price">$79.99</div>
+              <div class="item-actions">
+                <div class="item-quantity">
+                  <button class="quantity-btn">-</button>
+                  <input
+                    type="text"
+                    class="quantity-input"
+                    value="1"
+                    readonly
+                  />
+                  <button class="quantity-btn">+</button>
+                </div>
+                <div class="remove-item">Remove</div>
+              </div>
+            </div>
+            <div class="item-total">$79.99</div>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-image">
+              <img
+                src="../img/mount-dragon.jpg"
+                alt="Granite Mountain Dragon"
+              />
+            </div>
+            <div class="item-details">
+              <h3 class="item-name">Granite Mountain Dragon</h3>
+              <div class="item-price">$94.99</div>
+              <div class="item-actions">
+                <div class="item-quantity">
+                  <button class="quantity-btn">-</button>
+                  <input
+                    type="text"
+                    class="quantity-input"
+                    value="1"
+                    readonly
+                  />
+                  <button class="quantity-btn">+</button>
+                </div>
+                <div class="remove-item">Remove</div>
+              </div>
+            </div>
+            <div class="item-total">$94.99</div>
+          </div>
+        </div>
+
+        <!-- Shipping Form -->
+        <div class="shipping-form" id="shipping-section">
+          <h2 class="form-title">Shipping Information</h2>
+
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Address</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your street address"
+            />
+          </div>
+
+          <div class="form-group form-row">
+            <div>
+              <label class="form-label">City</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your city"
+              />
+            </div>
+            <div>
+              <label class="form-label">State/Province</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your state/province"
+              />
+            </div>
+          </div>
+
+          <div class="form-group form-row">
+            <div>
+              <label class="form-label">Zip/Postal Code</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your zip/postal code"
+              />
+            </div>
+            <div>
+              <label class="form-label">Country</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your country"
+              />
+            </div>
+          </div>
+
+          <h2 class="form-title">Payment Method</h2>
+          <div class="payment-options">
+            <div class="payment-option selected">
+              <div class="payment-icon">💳</div>
+              <div>Credit Card</div>
+            </div>
+            <div class="payment-option">
+              <div class="payment-icon">🏦</div>
+              <div>Bank Transfer</div>
+            </div>
+            <div class="payment-option">
+              <div class="payment-icon">📱</div>
+              <div>Mobile Payment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-right">
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <h2 class="summary-title">Order Summary</h2>
+
+          <div class="summary-item">
+            <div class="summary-label">Subtotal</div>
+            <div class="summary-value">$264.97</div>
+          </div>
+
+          <div class="summary-item">
+            <div class="summary-label">Shipping</div>
+            <div class="summary-value">$12.00</div>
+          </div>
+
+          <div class="summary-item">
+            <div class="summary-label">Tax</div>
+            <div class="summary-value">$23.85</div>
+          </div>
+
+          <div class="summary-total">
+            <div>Total</div>
+            <div>$300.82</div>
+          </div>
+
+          <button class="checkout-btn" id="completeOrder">
+            Complete Order
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Confirmation (Initially Hidden) -->
+    <div class="order-confirmation" id="confirmation-section">
+      <div class="confirmation-icon">✓</div>
+      <h2 class="confirmation-title">Thank You for Your Order!</h2>
+      <p class="confirmation-message">
+        Your order has been received and is now being processed.<br />
+        A confirmation email has been sent to your email address.
+      </p>
+
+      <div class="order-details">
+        <div class="order-number">Order #DL-27859</div>
+        <div class="detail-item">
+          <div>Date</div>
+          <div>April 23, 2025</div>
+        </div>
+        <div class="detail-item">
+          <div>Total</div>
+          <div>$300.82</div>
+        </div>
+        <div class="detail-item">
+          <div>Payment Method</div>
+          <div>Credit Card</div>
+        </div>
+      </div>
+
+      <a href="product.html" class="return-btn">Return to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#">All Dragons</a></li>
+            <li><a href="#">Fire Dragons</a></li>
+            <li><a href="#">Water Dragons</a></li>
+            <li><a href="#">Earth Dragons</a></li>
+            <li><a href="#">Air Dragons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>About</h3>
+          <ul class="footer-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Our Artisans</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dragon's Lair Emporium. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Quantity buttons functionality
+      const quantityBtns = document.querySelectorAll(".quantity-btn");
+      quantityBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = btn.parentElement.querySelector(".quantity-input");
+          const currentValue = parseInt(input.value);
+          const isPlus = btn.textContent === "+";
+          if (isPlus) {
+            input.value = currentValue + 1;
+          } else if (currentValue > 1) {
+            input.value = currentValue - 1;
+          }
+          // Update product total (this would be more sophisticated in a real app)
+          const cartItem = btn.closest(".cart-item");
+          const price = parseFloat(
+            cartItem.querySelector(".item-price").textContent.replace("$", "")
+          );
+          const quantity = parseInt(input.value);
+          cartItem.querySelector(".item-total").textContent =
+            `$${(price * quantity).toFixed(2)}`;
+
+          // Update order summary
+          updateOrderSummary();
+        });
+      });
+
+      // Remove item functionality
+      const removeButtons = document.querySelectorAll(".remove-item");
+      removeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const cartItem = btn.closest(".cart-item");
+          cartItem.style.opacity = "0";
+          setTimeout(() => {
+            cartItem.remove();
+            // Update cart count
+            const cartCount = document.querySelector(".cart-count");
+            if (cartCount) {
+              cartCount.textContent = parseInt(cartCount.textContent) - 1;
+            }
+            // Update order summary
+            updateOrderSummary();
+            // Check if cart is empty
+            checkEmptyCart();
+          }, 300);
+        });
+      });
+
+      // Payment option selection
+      const paymentOptions = document.querySelectorAll(".payment-option");
+      paymentOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          // Remove active class from all options
+          paymentOptions.forEach((opt) => {
+            opt.classList.remove("active");
+            opt.classList.remove("selected");
+          });
+          // Add active class to selected option
+          option.classList.add("active");
+          option.classList.add("selected");
+
+          // In checkout.html, we don't have payment forms with class names based on data-payment
+          // so we'll skip this part to avoid the error
+          const paymentType = option.getAttribute("data-payment");
+          if (paymentType) {
+            const paymentForm = document.querySelector(`.${paymentType}-form`);
+            if (paymentForm) {
+              // Hide all payment forms first
+              const paymentForms = document.querySelectorAll(".payment-form");
+              paymentForms.forEach((form) => {
+                form.style.display = "none";
+              });
+              // Show the selected payment form
+              paymentForm.style.display = "block";
+            }
+          }
+        });
+      });
+
+      // Update order summary
+      function updateOrderSummary() {
+        const cartItems = document.querySelectorAll(".cart-item");
+        let subtotal = 0;
+        let itemCount = 0;
+
+        cartItems.forEach((item) => {
+          const itemTotal = parseFloat(
+            item.querySelector(".item-total").textContent.replace("$", "")
+          );
+          subtotal += itemTotal;
+
+          // Get quantity from each item
+          const quantity = parseInt(
+            item.querySelector(".quantity-input").value
+          );
+          itemCount += quantity;
+        });
+
+        const taxRate = 0.09; // 9% tax rate
+        const tax = subtotal * taxRate;
+        const shipping = subtotal > 100 ? 0 : 12; // Free shipping over $100
+        const total = subtotal + tax + shipping;
+
+        // Update the summary values in the order summary section
+        const summaryItems = document.querySelectorAll(".summary-item");
+        if (summaryItems.length >= 3) {
+          // Update subtotal (first item)
+          const subtotalElement =
+            summaryItems[0].querySelector(".summary-value");
+          if (subtotalElement) {
+            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+          }
+
+          // Update shipping (second item)
+          const shippingElement =
+            summaryItems[1].querySelector(".summary-value");
+          if (shippingElement) {
+            shippingElement.textContent =
+              shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`;
+          }
+
+          // Update tax (third item)
+          const taxElement = summaryItems[2].querySelector(".summary-value");
+          if (taxElement) {
+            taxElement.textContent = `$${tax.toFixed(2)}`;
+          }
+        }
+
+        // Update total
+        const summaryTotal = document.querySelector(
+          ".summary-total div:last-child"
+        );
+        if (summaryTotal) {
+          summaryTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Update the subtotal text to include the new item count
+        const summaryLabel = document.querySelector(
+          ".summary-item:first-child .summary-label"
+        );
+        if (summaryLabel) {
+          summaryLabel.textContent = `Subtotal (${itemCount} ${itemCount === 1 ? "item" : "items"})`;
+        }
+
+        // Update cart title to reflect number of items
+        const cartTitle = document.querySelector(".cart-title");
+        if (cartTitle) {
+          cartTitle.textContent = `Your Cart (${itemCount} ${itemCount === 1 ? "item" : "items"})`;
+        }
+      }
+
+      // Check if cart is empty
+      function checkEmptyCart() {
+        const cartItems = document.querySelectorAll(".cart-item");
+        const cartContainer = document.querySelector(".cart-items");
+        const orderSummary = document.querySelector(".order-summary");
+
+        if (cartItems.length === 0) {
+          let emptyCartMessage = document.querySelector(".empty-cart-message");
+
+          if (!emptyCartMessage && cartContainer) {
+            emptyCartMessage = document.createElement("div");
+            emptyCartMessage.className = "empty-cart-message";
+            emptyCartMessage.innerHTML = `
+        <p>Your cart is empty!</p>
+        <a href="product.html" class="continue-shopping">Continue Shopping</a>
+      `;
+            cartContainer.appendChild(emptyCartMessage);
+          } else if (emptyCartMessage) {
+            emptyCartMessage.style.display = "block";
+          }
+
+          if (orderSummary) {
+            orderSummary.style.display = "none";
+          }
+        }
+      }
+
+      // Apply promo code
+      const promoForm = document.querySelector(".promo-form");
+      if (promoForm) {
+        promoForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const promoInput = promoForm.querySelector(".promo-input");
+          const promoCode = promoInput.value.trim().toUpperCase();
+          const promoMessage = document.querySelector(".promo-message");
+
+          // Example promo codes
+          const validPromos = {
+            WELCOME10: 0.1, // 10% off
+            FREESHIP: "shipping",
+            SAVE20: 0.2, // 20% off
+          };
+
+          if (validPromos[promoCode]) {
+            // Apply discount
+            if (promoCode === "FREESHIP") {
+              // Find shipping element in summary items
+              const summaryItems = document.querySelectorAll(".summary-item");
+              if (summaryItems.length >= 2) {
+                const shippingValue =
+                  summaryItems[1].querySelector(".summary-value");
+                if (shippingValue) {
+                  shippingValue.textContent = "FREE";
+                }
+              }
+
+              if (promoMessage) {
+                promoMessage.textContent = "Free shipping applied!";
+                promoMessage.className = "promo-message success";
+              }
+            } else {
+              const discount = validPromos[promoCode];
+              // Find subtotal in summary items
+              const summaryItems = document.querySelectorAll(".summary-item");
+              if (summaryItems.length >= 1) {
+                const subtotalValue =
+                  summaryItems[0].querySelector(".summary-value");
+                if (subtotalValue) {
+                  const subtotal = parseFloat(
+                    subtotalValue.textContent.replace("$", "")
+                  );
+                  const discountAmount = subtotal * discount;
+
+                  // Check if discount element already exists
+                  let discountItem = document.querySelector(
+                    ".summary-item.discount"
+                  );
+                  if (!discountItem) {
+                    // Create a new discount item
+                    discountItem = document.createElement("div");
+                    discountItem.className = "summary-item discount";
+                    discountItem.innerHTML = `
+                <div class="summary-label">Discount</div>
+                <div class="summary-value">-$${discountAmount.toFixed(2)}</div>
+              `;
+
+                    // Insert before the total
+                    const summaryTotal =
+                      document.querySelector(".summary-total");
+                    if (summaryTotal && summaryTotal.parentNode) {
+                      summaryTotal.parentNode.insertBefore(
+                        discountItem,
+                        summaryTotal
+                      );
+                    }
+                  } else {
+                    // Update existing discount
+                    const discountValue =
+                      discountItem.querySelector(".summary-value");
+                    if (discountValue) {
+                      discountValue.textContent = `-$${discountAmount.toFixed(2)}`;
+                    }
+                  }
+                }
+              }
+
+              if (promoMessage) {
+                promoMessage.textContent = `${discount * 100}% discount applied!`;
+                promoMessage.className = "promo-message success";
+              }
+            }
+
+            // Update total
+            updateOrderSummary();
+          } else if (promoMessage) {
+            promoMessage.textContent = "Invalid promo code";
+            promoMessage.className = "promo-message error";
+          }
+        });
+      }
+
+      // Checkout process
+      const checkoutBtn = document.querySelector(".checkout-btn");
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Check if we have items in the cart
+          const cartItems = document.querySelectorAll(".cart-item");
+          if (cartItems.length === 0) {
+            alert("Your cart is empty!");
+            return;
+          }
+
+          // Validate form - in this simplified version, we'll skip detailed validation
+          const activePaymentMethod = document.querySelector(
+            ".payment-option.selected"
+          );
+          if (!activePaymentMethod) {
+            alert("Please select a payment method");
+            return;
+          }
+
+          // Simulate order processing
+          checkoutBtn.textContent = "Processing...";
+          checkoutBtn.disabled = true;
+
+          setTimeout(() => {
+            // Show confirmation section or redirect
+            const confirmationSection = document.getElementById(
+              "confirmation-section"
+            );
+            const checkoutContainer = document.querySelector(
+              ".checkout-container"
+            );
+
+            if (confirmationSection && checkoutContainer) {
+              checkoutContainer.style.display = "none";
+              confirmationSection.style.display = "block";
+            } else {
+              // Fallback if elements not found
+              alert("Thank you for your purchase!");
+              window.location.href = "product.html";
+            }
+          }, 2000);
+        });
+      }
+
+      // Add to cart functionality for shop page
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+      if (addToCartButtons.length > 0) {
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const productCard = button.closest(".product-card");
+            if (!productCard) return;
+
+            const productName =
+              productCard.querySelector(".product-name").textContent;
+            const productPrice =
+              productCard.querySelector(".product-price").textContent;
+            const productImage =
+              productCard.querySelector(".product-image img").src;
+
+            // Add item to cart (in a real app, this would likely use localStorage or a cart API)
+            // For now, we'll just increment the cart count
+            const cartCount = document.querySelector(".cart-count");
+            if (cartCount) {
+              cartCount.textContent = parseInt(cartCount.textContent) + 1;
+            }
+
+            // Show confirmation message
+            const confirmationMsg = document.createElement("div");
+            confirmationMsg.className = "add-confirmation";
+            confirmationMsg.textContent = `${productName} added to cart!`;
+            document.body.appendChild(confirmationMsg);
+
+            // Remove confirmation message after 2 seconds
+            setTimeout(() => {
+              confirmationMsg.style.opacity = "0";
+              setTimeout(() => {
+                confirmationMsg.remove();
+              }, 300);
+            }, 2000);
+          });
+        });
+      }
+
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", () => {
+        // Update order summary on page load
+        updateOrderSummary();
+
+        // Check if cart is empty
+        checkEmptyCart();
+
+        // Set default payment method if available
+        if (paymentOptions.length > 0) {
+          paymentOptions[0].click();
+        }
+
+        // Hide confirmation section initially
+        const confirmationSection = document.getElementById(
+          "confirmation-section"
+        );
+        if (confirmationSection) {
+          confirmationSection.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

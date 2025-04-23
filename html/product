@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Dragon's Lair Emporium</title>
+    <style>
+        :root {
+            --primary: #6a0dad;
+            --secondary: #f8c630;
+            --dark: #2d1842;
+            --light: #f5f5f5;
+            --accent: #e63946;
+            --gradient: linear-gradient(135deg, #6a0dad, #2d1842);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 10px;
+        }
+
+        .breadcrumb li:after {
+            content: '>';
+            margin-left: 10px;
+        }
+
+        .breadcrumb li:last-child:after {
+            content: '';
+        }
+
+        .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Shop Container */
+        .shop-container {
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+
+        /* Filter Sidebar */
+        .filters {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .filter-group {
+            margin-bottom: 25px;
+        }
+
+        .filter-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-options {
+            list-style: none;
+        }
+
+        .filter-options li {
+            margin-bottom: 10px;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .filter-checkbox input {
+            cursor: pointer;
+        }
+
+        .price-range {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-input {
+            width: 80px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .apply-filters {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .apply-filters:hover {
+            background-color: var(--dark);
+        }
+
+        /* Product Grid */
+        .shop-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: var(--accent);
+            color: white;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 5px;
+            margin-top: 40px;
+        }
+
+        .pagination a {
+            display: block;
+            padding: 8px 12px;
+            background-color: white;
+            color: var(--dark);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #eee;
+        }
+
+        /* Shop Header */
+        .shop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .shop-results {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .shop-sort {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sort-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .sort-select {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 50px 5% 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .shop-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters {
+                order: 1;
+            }
+            
+            .shop-products {
+                order: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .shop-products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                padding: 5px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .shop-products {
+                grid-template-columns: 1fr;
+            }
+            
+            .shop-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .filter-group {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="Dragon's Lair Emporium Logo">
+                <h1>Dragon's Lair Emporium</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <h1 class="page-title">Dragon Shop</h1>
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Shop</li>
+        </ul>
+    </section>
+
+    <!-- Shop Section -->
+    <div class="shop-container">
+        <!-- Filters Sidebar -->
+        <aside class="filters">
+            <div class="filter-group">
+                <h3 class="filter-title">Categories</h3>
+                <ul class="filter-options">
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked> All Dragons
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Fire Dragons
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Water Dragons
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Earth Dragons
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Air Dragons
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-title">Price Range</h3>
+                <div class="price-range">
+                    $<input type="number" class="price-input" placeholder="Min" value="0">
+                    to
+                    $<input type="number" class="price-input" placeholder="Max" value="200">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-title">Size</h3>
+                <ul class="filter-options">
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Small (3"-6")
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked> Medium (7"-12")
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Large (13"+)
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h3 class="filter-title">Material</h3>
+                <ul class="filter-options">
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Resin
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Metal
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Crystal
+                        </label>
+                    </li>
+                    <li>
+                        <label class="filter-checkbox">
+                            <input type="checkbox"> Hand-painted
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="apply-filters">Apply Filters</button>
+        </aside>
+
+        <!-- Products Area -->
+        <main class="main-content">
+            <div class="shop-header">
+                <div class="shop-results">Showing 1-8 of 24 products</div>
+                <div class="shop-sort">
+                    <span class="sort-label">Sort by:</span>
+                    <select class="sort-select">
+                        <option>Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest</option>
+                        <option>Best Selling</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="shop-products">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <span class="product-tag">Best Seller</span>
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Dragon Figurine">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ember Guardian Dragon</h3>
+                        <p class="product-price">$89.99</p>
+                        <p class="product-description">A majestic fire dragon figurine with intricate scale details.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Water Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sapphire Sea Dragon</h3>
+                        <p class="product-price">$79.99</p>
+                        <p class="product-description">This elegant water dragon features flowing fins and a pearl-like finish.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <span class="product-tag">New</span>
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Mountain Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Granite Mountain Dragon</h3>
+                        <p class="product-price">$94.99</p>
+                        <p class="product-description">A sturdy earth dragon with stone-like texture and emerald eyes.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Wind Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Zephyr Wind Dragon</h3>
+                        <p class="product-price">$69.99</p>
+                        <p class="product-description">This lightweight, posed wind dragon appears to soar through the clouds.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Crystal Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Aurora Crystal Dragon</h3>
+                        <p class="product-price">$129.99</p>
+                        <p class="product-description">A shimmering dragon with translucent crystal wings that catch the light.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <span class="product-tag">Sale</span>
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Shadow Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Midnight Shadow Dragon</h3>
+                        <p class="product-price">$59.99</p>
+                        <p class="product-description">A mysterious dark dragon with obsidian-like scales and piercing eyes.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Forest Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Emerald Forest Dragon</h3>
+                        <p class="product-price">$84.99</p>
+                        <p class="product-description">A nature dragon with moss-like details and leaf-shaped wings.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/300/300" alt="Desert Dragon">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Amber Desert Dragon</h3>
+                        <p class="product-price">$74.99</p>
+                        <p class="product-description">A sand-dwelling dragon with golden scales and a scorpion-like tail.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <ul class="pagination">
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">Next →</a></li>
+            </ul>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="#">All Dragons</a></li>
+                    <li><a href="#">Fire Dragons</a></li>
+                    <li><a href="#">Water Dragons</a></li>
+                    <li><a href="#">Earth Dragons</a></li>
+                    <li><a href="#">Air Dragons</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>About</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Our Artisans</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dragon's Lair Emporium. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple cart functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCount = document.querySelector('.cart-count');
+        
+        let itemsInCart = 0;
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                itemsInCart++;
+                cartCount.textContent = itemsInCart;
+                
+                // Animation for button
+                button.textContent = "Added!";
+                button.style.backgroundColor = "#4CAF50";
+                
+                setTimeout(() => {
+                    button.textContent = "Add to Cart";
+                    button.style.backgroundColor = "#6a0dad";
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>

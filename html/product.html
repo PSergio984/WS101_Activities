@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/product.css" />
+    <title>Shop - Dragon's Lair Emporium</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../img/ahjin.png" alt="Dragon's Lair Emporium Logo" />
+          <h1>Dragon's Lair Emporium</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="shop.html">Home</a></li>
+          <li><a href="product.html" class="active">Shop</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#about">Contact</a></li>
+        </ul>
+
+        <a href="checkout.html"
+          ><div class="cart-icon">
+            <span>🛒</span>
+            <span class="cart-count">0</span>
+          </div>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <h1 class="page-title">Dragon Shop</h1>
+      <ul class="breadcrumb">
+        <li><a href="/html/shop.html">Home</a></li>
+        <li>Shop</li>
+      </ul>
+    </section>
+
+    <!-- Shop Section -->
+    <div class="shop-container">
+      <!-- Filters Sidebar -->
+      <aside class="filters">
+        <div class="filter-group">
+          <h3 class="filter-title">Categories</h3>
+          <ul class="filter-options">
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" checked /> All Dragons
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Fire Dragons
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Water Dragons
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Earth Dragons
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Air Dragons
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Price Range</h3>
+          <div class="price-range">
+            $<input
+              type="number"
+              class="price-input"
+              placeholder="Min"
+              value="0"
+            />
+            to $<input
+              type="number"
+              class="price-input"
+              placeholder="Max"
+              value="200"
+            />
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Size</h3>
+          <ul class="filter-options">
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Small (3"-6")
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" checked /> Medium (7"-12")
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Large (13"+)
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Material</h3>
+          <ul class="filter-options">
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Resin
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Metal
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Crystal
+              </label>
+            </li>
+            <li>
+              <label class="filter-checkbox">
+                <input type="checkbox" /> Hand-painted
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <button class="apply-filters">Apply Filters</button>
+      </aside>
+
+      <!-- Products Area -->
+      <main class="main-content">
+        <div class="shop-header">
+          <div class="shop-results">Showing 1-8 of 24 products</div>
+          <div class="shop-sort">
+            <span class="sort-label">Sort by:</span>
+            <select class="sort-select">
+              <option>Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest</option>
+              <option>Best Selling</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="shop-products">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <span class="product-tag">Best Seller</span>
+            <div class="product-image">
+              <img src="../img/dragon1.jpg" alt="Dragon Figurine" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Ember Guardian Dragon</h3>
+              <p class="product-price">$89.99</p>
+              <p class="product-description">
+                A majestic fire dragon figurine with intricate scale details.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/water-dragon.jpg" alt="Water Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sapphire Sea Dragon</h3>
+              <p class="product-price">$79.99</p>
+              <p class="product-description">
+                This elegant water dragon features flowing fins and a pearl-like
+                finish.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <span class="product-tag">New</span>
+            <div class="product-image">
+              <img src="../img/mount-dragon.jpg" alt="Mountain Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Granite Mountain Dragon</h3>
+              <p class="product-price">$94.99</p>
+              <p class="product-description">
+                A sturdy earth dragon with stone-like texture and emerald eyes.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/wind-dragon.jpg" alt="Wind Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Zephyr Wind Dragon</h3>
+              <p class="product-price">$69.99</p>
+              <p class="product-description">
+                This lightweight, posed wind dragon appears to soar through the
+                clouds.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/diamond-dragon.jpg" alt="Crystal Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Aurora Crystal Dragon</h3>
+              <p class="product-price">$129.99</p>
+              <p class="product-description">
+                A shimmering dragon with translucent crystal wings that catch
+                the light.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="product-card">
+            <span class="product-tag">Sale</span>
+            <div class="product-image">
+              <img src="../img/shadow-dragon.jpg" alt="Shadow Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Midnight Shadow Dragon</h3>
+              <p class="product-price">$59.99</p>
+              <p class="product-description">
+                A mysterious dark dragon with obsidian-like scales and piercing
+                eyes.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/forest-dragon.jpg" alt="Forest Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Emerald Forest Dragon</h3>
+              <p class="product-price">$84.99</p>
+              <p class="product-description">
+                A nature dragon with moss-like details and leaf-shaped wings.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="../img/desert-dragon.jpg" alt="Desert Dragon" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Amber Desert Dragon</h3>
+              <p class="product-price">$74.99</p>
+              <p class="product-description">
+                A sand-dwelling dragon with golden scales and a scorpion-like
+                tail.
+              </p>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <ul class="pagination">
+          <li><a href="#" class="active">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">Next →</a></li>
+        </ul>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul class="footer-links">
+            <li><a href="#">All Dragons</a></li>
+            <li><a href="#">Fire Dragons</a></li>
+            <li><a href="#">Water Dragons</a></li>
+            <li><a href="#">Earth Dragons</a></li>
+            <li><a href="#">Air Dragons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3 id="about">About</h3>
+          <ul class="footer-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Our Artisans</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Dragon's Lair Emporium. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Simple cart functionality
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+      const cartCount = document.querySelector(".cart-count");
+
+      let itemsInCart = 0;
+
+      addToCartButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          itemsInCart++;
+          cartCount.textContent = itemsInCart;
+
+          // Animation for button
+          button.textContent = "Added!";
+          button.style.backgroundColor = "#4CAF50";
+
+          setTimeout(() => {
+            button.textContent = "Add to Cart";
+            button.style.backgroundColor = "#6a0dad";
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
