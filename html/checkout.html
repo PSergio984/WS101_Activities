@@ -645,22 +645,9 @@
           checkoutBtn.disabled = true;
 
           setTimeout(() => {
-            // Show confirmation section or redirect
-            const confirmationSection = document.getElementById(
-              "confirmation-section"
-            );
-            const checkoutContainer = document.querySelector(
-              ".checkout-container"
-            );
-
-            if (confirmationSection && checkoutContainer) {
-              checkoutContainer.style.display = "none";
-              confirmationSection.style.display = "block";
-            } else {
-              // Fallback if elements not found
-              alert("Thank you for your purchase!");
-              window.location.href = "product.html";
-            }
+            // Fallback if elements not found
+            alert("Thank you for your purchase!");
+            window.location.href = "product.html";
           }, 2000);
         });
       }
